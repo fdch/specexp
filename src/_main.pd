@@ -1,11 +1,12 @@
 #N canvas 524 52 366 246 12;
-#X declare -path ./lib -path ./lib/abs -path ./lib/fd_lib;
-#N canvas 0 22 450 300 init 0;
-#X obj 45 34 declare -path ./lib -path ./lib/abs -path ./lib/fd_lib
+#X declare -path ./lib -path ./lib/abs -path ./lib/fd_lib -path ./lib/pix_opencv
 ;
+#N canvas 0 22 718 336 init 0;
 #X obj 56 77 loadbang;
 #X msg 56 102 \; pd dsp 1 \; sub 1 \;;
-#X connect 1 0 2 0;
+#X obj 45 34 declare -path ./lib -path ./lib/abs -path ./lib/fd_lib
+-path ./lib/pix_opencv;
+#X connect 0 0 1 0;
 #X restore 30 23 pd init;
 #N canvas 563 286 556 460 _sub 0;
 #X obj 69 110 r to-sub;
@@ -51,7 +52,7 @@
 #X restore 94 23 pd audio arrays;
 #X text 102 55 <-- this opens a subprocess that runs "_sub.pd", f
 17;
-#N canvas 247 22 766 557 audio 0;
+#N canvas 489 39 766 557 audio 0;
 #X obj 33 296 tgl 15 0 empty empty onoff 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 33 444 *~ 0.01;
@@ -318,7 +319,7 @@
 #X restore 29 154 pd audio imaginary;
 #X obj 32 55 tgl 15 0 empty sub sub 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 288 27 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 900 1;
+-1 -1 0 1;
 #X text 148 129 <-- see here;
 #X connect 8 0 1 0;
 #X connect 9 0 6 0;
