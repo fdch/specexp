@@ -1,15 +1,5 @@
-# Hearing the Self : A Spectral Experience
+## How to run
 
-Currently only mac is supported.
-
-To begin, run:
-
-``
-  $ ./run.command
-``
-
-If you get an error such as 
 `
-[pix_video] no backend detected...
+$ ./fetch 300 -nogui "Komplete Audio 6" "24Ao"
 `
-unpack the .zip file and use that instead.

@@ -1,4 +1,0 @@
-#N canvas 529 61 415 348 12;
-#X text 159 31 "fd_getsize";
-#X text 34 70 Get size of an array in a data structure;
-#X obj 139 137 fd_getsize \$0;

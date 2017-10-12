@@ -1,0 +1,94 @@
+#!/bin/bash
+#
+# this script uses imagemagick (convert) and 'fetch-image' (fim) available here:
+# 
+# https://www.npmjs.com/package/fetch-image
+#
+
+KEYWORD="face"
+AUDIOINDEV="Komplete Audio 6"
+AUDIOOUTDEV="24Ao"
+RUN="./run-nogui"
+
+IP=$(ipconfig getifaddr en0)
+
+echo "
+Connect RPi to this address: $IP
+"
+
+if [ $1 ] 
+then
+	NUMIMAGES=$1
+else
+	NUMIMAGES=600
+	echo "Defaults to 600 images"
+fi
+PREFIX="i-"
+WD=$(pwd)
+BASE="../../../images"
+TEMP="$BASE/temp"
+INDEX="count.txt"
+DIRNAME="jpg"
+COUNT=$(cat "$BASE/$INDEX")
+((COUNT++))
+NEWDIR="$BASE/$DIRNAME$COUNT"
+echo "Making new directory:
+$NEWDIR
+"
+mkdir $NEWDIR
+IDX=0
+rm $TEMP/*
+
+fim $KEYWORD -d $TEMP -n $NUMIMAGES -p $PREFIX
+
+for i in $TEMP/*
+do
+	FILENAME="$NEWDIR/$PREFIX$IDX.jpg"
+	echo "converting $FILENAME"
+
+	if convert "$i" -resize '128x128^' -gravity center -crop 128x128+0+0  "$FILENAME" > /dev/null 2>&1
+	#if convert "$i" "$FILENAME" > /dev/null 2>&1
+	#if convert "$i" -resize '128x128^' -gravity center -crop 25x25+0+0 +repage "$FILENAME" /dev/null 2>&1
+	#if convert "$1" -thumbnail 128x128^ -gravity center -extent 100x100 "$FILENAME" > /dev/null 2>&1
+	then
+		((IDX++))
+	else
+		echo "$i not converted"
+	fi
+done
+echo $COUNT > $BASE/$INDEX
+
+cd "$WD"
+((IDX--))
+rm $TEMP/*
+pd -nogui -batch -send ";filename symbol $TEMP/i;max $IDX;imagedir $NEWDIR/$PREFIX*.jpg" -open imagefft.pd
+((IDX++))
+for i in $TEMP/*
+do
+	FILENAME="$NEWDIR/$PREFIX$IDX.jpg"
+	echo "converting $FILENAME"
+	if convert "$i" -resize '128x128' "$FILENAME" > /dev/null 2>&1
+	then
+		((IDX++))
+	else
+		echo "$i not converted"
+	fi
+done
+((IDX--))
+
+if [ "$2" == "-nogui" ]
+then
+	RUN="./run-nogui"
+else
+	RUN="./run"
+fi
+
+if [ "$3" ]
+then
+	echo "Audio input/output device set to $3"
+	"$RUN" "$IDX" "$NEWDIR/$PREFIX*.jpg" "$IP" "$3" "$4"
+else
+	echo "Default audio device set to $AUDIODEV"
+        "$RUN" "$IDX" "$NEWDIR/$PREFIX*.jpg" "$IP" "$AUDIOINDEV" "$AUDIOOUTDEV"
+fi
+exit 0

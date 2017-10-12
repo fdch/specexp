@@ -1,0 +1,20 @@
+#!/bin/bash
+
+sudo pd -nojackconnect -noverbose -nogui -nomidi -audioaddindev "$4" -audioaddoutdev "$5" -inchannels 1 -outchannels 12 -r 44100 -send ";ip symbol $3" -open main.pd &
+echo "20 sec countdown"
+sleep 15
+echo 5
+sleep 1
+echo 4
+sleep 1
+echo 3
+sleep 1
+echo 2
+sleep 1
+echo 1
+sleep 1
+echo "done" &
+pd -nojackconnect -noverbose -noaudio -nomidi -nogui -send "max $1" -send "imagedir $2" -send "delrandom bang" -open main_video.pd
+
+
+
