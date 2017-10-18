@@ -2,11 +2,11 @@
 
 We propose an interactive, audiovisual installation piece offering a glimpse into the human spectrum. Motivated by the concept of spectrum derived from Mathematics and Physics, we attempt to recreate the process by which the human brain *perceives* the world. The audience's face will be an interface through the use of computer vision.
 
-![alt text](https://github.com/fdch/specexp/blob/master/media/vid-269.jpeg)
+![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-269.jpeg)
 
 In trying to answer the most fundamental questions of our existence, we unveil a daunting level of complexity in our universe. One such question is, *Where are we?*. This question's complexity grows quickly as we change contexts. It is easy to answer locally and even globally; we have well-established coordinates and descriptions for our place on Earth. But when we extend this question to the universe, we no longer have a canonical and precise answer. 
 
-![alt text](https://github.com/fdch/specexp/blob/master/media/vid-071.jpeg)
+![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-071.jpeg)
 
 To answer this question, we must understand *perception*. Field’s medalist, Professor Alain Connes, suggests that our brain is a machine that performs an inverse Fourier Transform through which it constructs a geometric image from correlations of reflections of light. This is a small consequence of the idea that a correct way to answer the above question is that we are in the *spectrum of an operator*. Spectrum derives from the Latin word, specere, meaning "to look." "We have noted that we already are skilled at finding visual spatial patterns, but that we have far less experience with the spectral properties of the world, especially outside of the visible wavelengths." For this reason, the **spectral experience** is both visual and audio, where the audio acts by extending perception beyond what the eye can see.
 
@@ -20,7 +20,7 @@ The **spectral experience** offers a glimpse into a different and larger reality
 
 An audience of one enters a dark room and performs an audiovisual installation from 2-6 minutes using only her face.
 
-![alt text](https://github.com/fdch/specexp/blob/master/media/vid-253.jpeg)
+![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-253.jpeg)
 
 ## Description
 There is a soft, low frequency sound that invites the audience into the performing space. She finds a spotlight in the center, where she is expected to be during the performance. The light shines on her face as the performance begins. In front of her are two screens onto which the projection is mapped from behind. Two screens are needed to create an atmosphere of immersion. The sound comes from four speakers distributed in quadraphonic setup, englobing the audience. 
@@ -38,7 +38,7 @@ Different oscillators in frequencies around 25-60Hz represent the first modes of
 
 In 1822 Joseph Fourier introduced the concept of Fourier series to decompose a signal into elementary terms. In this way, Fourier inadvertently tied the real functions to a decomposition with respect to the spectrum of the Laplace operator on an interval.
 
-![alt text](https://github.com/fdch/specexp/blob/master/media/vid-180.jpeg)
+![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-180.jpeg)
 
 As mentioned above, data is taken of the audience's image and face. In this project we will be exploiting two different operators. On the one hand, analogously to Fourier, the Laplace operator of a two dimensional grid. The grid is the pixels of the image taken by the webcamera. On the other hand, we consider the graph Laplacian defined on the nodes coming from the FaceOSC.app.
 
