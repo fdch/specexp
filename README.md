@@ -1,6 +1,6 @@
 # Hearing the Self: a Spectral Experience
 
-We propose an interactive, audiovisual installation piece offering a glimpse into the human spectrum. Motivated by the concept of spectrum derived from Mathematics and Physics, we attempt to recreate the process by which the human brain *perceives* the world. The audience's face will be an interface through the use of computer vision.
+We propose an interactive, audiovisual installation piece offering a glimpse into the human spectrum. Motivated by the concept of spectrum derived from Mathematics and Physics, we attempt to recreate the process by which the human brain *perceives* the world. The audience's face will be an interface through the use of computer vision. The code is available [here](https://github.com/fdch/specexp)
 
 ![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-269.jpeg)
 
