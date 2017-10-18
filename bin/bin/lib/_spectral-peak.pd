@@ -49,8 +49,7 @@
 #X msg 224 376 \$1 10;
 #X obj 224 401 line~;
 #X obj 175 512 throw~ out-5;
-#X obj 416 3 r _spectral-peak;
-#X obj 416 28 route \$1;
+#X obj 323 16 inlet;
 #X connect 0 0 22 1;
 #X connect 1 0 44 0;
 #X connect 2 0 7 0;
@@ -106,5 +105,4 @@
 #X connect 45 0 46 0;
 #X connect 46 0 47 0;
 #X connect 47 0 44 1;
-#X connect 49 0 50 0;
-#X connect 50 0 32 0;
+#X connect 49 0 32 0;

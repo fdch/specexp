@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+# This script loads a pd patch (argument 1) and puts all dependencies in the 
+# directory specified with argument 2
+#
+
+
 #get pdfile name from argument 1
 if [ "$1" ]
 then

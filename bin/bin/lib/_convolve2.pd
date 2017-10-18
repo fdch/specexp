@@ -20,7 +20,7 @@
 #X obj 201 23 tabreceive~ \$4;
 #X obj 135 238 tabreceive~ 0-gau;
 #X obj 59 47 tabreceive~ 0-gau;
-#X obj 298 179 switch~ \$1 \$2 \$3;
+#X obj 318 161 switch~ \$1 \$2 \$3;
 #X obj 348 74 inlet;
 #X connect 1 0 4 1;
 #X connect 1 1 7 1;

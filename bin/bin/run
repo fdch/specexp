@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# This script runs the patch
+# See below for useful variable
+#
+
+if pd -version > /dev/null 2>&1
+then
+	echo "Pure Data is installed"
+else
+	echo "Please install latest Pure Data from https://msp.ucsd.edu"
+	exit 1
+fi
+
+BASE="../../../images"
+MAX=0
+IDX=$(cat $BASE/count.txt);
+DIR="$BASE/jpg$IDX"
+IMAGEDIR="$DIR/i-*.jpg"
+IP=$(ipconfig getifaddr en0)
+echo "
+Connect RPi to this address: $IP
+"
+AUDIOADDINDEV="Komplete Audio 6"
+AUDIOADDOUTDEV="24Ao"
+AFILE="main.pd"
+VFILE="main_video.pd"
+
+for i in $DIR/*
+do
+	((MAX++))
+done
+((MAX--))
+echo $MAX
+if [ $1 ]
+then
+	if [ "$2" ]
+		then
+		echo "Audio input/output devices set to $2 and $3"
+		AUDIOADDINDEV="$2"
+		AUDIOADDOUTDEV="$3"
+	else
+		echo "Default audio devices: 
+Input: $AUDIOADDINDEV
+Output: $AUDIOADDOUTDEV
+"
+	fi
+	echo "Opening $AFILE without gui"
+	sudo pd -noverbose -nomidi -nogui -audioaddindev "$AUDIOADDINDEV" -audioaddoutdev "$AUDIOADDOUTDEV" -inchannels 1 -outchannels 4 -r 44100 -send ";ip symbol $IP" -open "$AFILE" &
+	i=20
+	while [ $i -gt 0 ]
+	do
+		sleep 1
+		echo $i
+		i=$[$i-1]
+	done
+	echo "Opening $VFILE without gui"
+	sudo pd -noverbose -nomidi -nogui -noaudio -send "max $MAX" -send "imagedir $IMAGEDIR" -send "delrandom bang" -open "$VFILE"
+else
+	echo "Opening $AFILE and $VFILE with gui"
+	sudo pd -send ";ip symbol $IP"-send "pd audio-properties" -open "$AFILE" &
+	sudo pd -send ";max $MAX;imagedir $IMAGEDIR" -open "$VFILE"
+fi
+exit 0

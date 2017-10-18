@@ -1,0 +1,69 @@
+#!/bin/bash
+#
+# Takes ff2d of a folder of images, and adds the fft images back to the folder
+# 
+# 
+#
+
+if pd -version > /dev/null 2>&1
+then
+	echo "Pure Data is installed"
+else
+	echo "Please install latest Pure Data from https://msp.ucsd.edu"
+	exit 1
+fi
+
+PDFILE="imagefft.pd"
+BASE="../../../images"
+TEMP="$BASE/temp"
+
+if [ $1 ]
+then
+	COUNT="$1"
+else
+	INDEX="count.txt"
+	COUNT=$(cat "$BASE/$INDEX")
+fi
+
+DIRNAME="jpg"
+NEWDIR="$BASE/$DIRNAME$COUNT"
+PREFIX="i-"
+IDX=0
+
+for i in $NEWDIR/*
+do
+	((IDX++))
+done
+
+if [ "$IDX" -eq 0 ]
+then
+	echo "No images found in $NEWDIR"
+	exit 1
+else
+	echo "Found $IDX images"
+fi
+
+rm $TEMP/*
+((IDX--))
+
+pd -stderr -noaudio -nomidi -noverbose -nogui -batch -send "filename symbol $TEMP/i" -send "max $IDX" -send "imagedir $NEWDIR/$PREFIX*.jpg" -open "$PDFILE"
+
+((IDX++))
+
+RAWIMAGES=$IDX
+for i in $TEMP/*
+do
+	FILENAME="$NEWDIR/$PREFIX$IDX.jpg"
+	echo "converting $FILENAME"
+	if convert "$i" -resize '128x128' "$FILENAME" > /dev/null 2>&1
+	then
+		((IDX++))
+	else
+		echo "$i not converted"
+	fi
+done
+echo "
+Total images downlaoded: $RAWIMAGES
+Total number of images (original + fft2d): $IDX
+Images located in: $NEWDIR
+"

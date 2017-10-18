@@ -6,15 +6,21 @@
 #
 
 KEYWORD="face"
-AUDIOINDEV="Komplete Audio 6"
-AUDIOOUTDEV="24Ao"
-RUN="./run-nogui"
 
 IP=$(ipconfig getifaddr en0)
 
 echo "
 Connect RPi to this address: $IP
 "
+
+if pd -version > /dev/null 2>&1
+then
+	echo "Pure Data is installed"
+else
+	echo "Please install latest Pure Data from https://msp.ucsd.edu"
+	exit 1
+fi
+
 
 if [ $1 ] 
 then
@@ -24,6 +30,7 @@ else
 	echo "Defaults to 600 images"
 fi
 PREFIX="i-"
+# Working directory, i.e. bin
 WD=$(pwd)
 BASE="../../../images"
 TEMP="$BASE/temp"
@@ -37,6 +44,7 @@ $NEWDIR
 "
 mkdir $NEWDIR
 IDX=0
+
 rm $TEMP/*
 
 fim $KEYWORD -d $TEMP -n $NUMIMAGES -p $PREFIX
@@ -47,9 +55,6 @@ do
 	echo "converting $FILENAME"
 
 	if convert "$i" -resize '128x128^' -gravity center -crop 128x128+0+0  "$FILENAME" > /dev/null 2>&1
-	#if convert "$i" "$FILENAME" > /dev/null 2>&1
-	#if convert "$i" -resize '128x128^' -gravity center -crop 25x25+0+0 +repage "$FILENAME" /dev/null 2>&1
-	#if convert "$1" -thumbnail 128x128^ -gravity center -extent 100x100 "$FILENAME" > /dev/null 2>&1
 	then
 		((IDX++))
 	else
@@ -61,8 +66,9 @@ echo $COUNT > $BASE/$INDEX
 cd "$WD"
 ((IDX--))
 rm $TEMP/*
-pd -nogui -batch -send ";filename symbol $TEMP/i;max $IDX;imagedir $NEWDIR/$PREFIX*.jpg" -open imagefft.pd
+pd -nogui -batch -send "filename symbol $TEMP/i" -send "max $IDX" -send "imagedir $NEWDIR/$PREFIX*.jpg" -open imagefft.pd
 ((IDX++))
+RAWIMAGES=$IDX
 for i in $TEMP/*
 do
 	FILENAME="$NEWDIR/$PREFIX$IDX.jpg"
@@ -74,21 +80,18 @@ do
 		echo "$i not converted"
 	fi
 done
-((IDX--))
-
-if [ "$2" == "-nogui" ]
-then
-	RUN="./run-nogui"
-else
-	RUN="./run"
-fi
-
-if [ "$3" ]
-then
-	echo "Audio input/output device set to $3"
-	"$RUN" "$IDX" "$NEWDIR/$PREFIX*.jpg" "$IP" "$3" "$4"
-else
-	echo "Default audio device set to $AUDIODEV"
-        "$RUN" "$IDX" "$NEWDIR/$PREFIX*.jpg" "$IP" "$AUDIOINDEV" "$AUDIOOUTDEV"
-fi
+echo "
+Total images downlaoded: $RAWIMAGES
+Total number of images (original + fft2d): $IDX
+Images located in: $NEWDIR
+"
+pd -listdev -version
+echo "
+Run with Gui:
+	$ (sudo) ./run
+Run without Gui:
+	$ (sudo) ./run 1
+Run without Gui specifying audio devices:
+	$ (sudo) ./run 1 \"Input device\" \"Output device\"
+"
 exit 0
