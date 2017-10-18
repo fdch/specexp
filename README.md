@@ -54,5 +54,35 @@ As mentioned above, data is taken of the audience's image and face. In this proj
 
 `
 $ cd bin
-$ ./fetch 300 -nogui "Komplete Audio 6" "24Ao"
 `
+
+Fetch images (defaults to 600)
+
+`
+$ ./fetch 600
+`
+
+`
+$ ./run
+`
+
+or run without GUI
+
+`
+$ ./run 1 "Audio Input device" "Audio  Output device name"
+`
+
+**Note:** Some countries (e.g. China) block Google searches, so here are some alternative search engines to obtain an updated *face* database:
+
+### Yahoo
+`
+https://sg.images.search.yahoo.com/search/images;_ylt=A8tUwJrruuBZnHYAoXol4gt.?p=face&imgc=bw&fr=sfp&imgty=face&fr2=p%3As%2Cv%3Ai
+`
+
+### Bing
+
+`
+http://cn.bing.com/images/search?&q=bing+api&qft=+filterui:imagesize-custom_128_128+filterui:aspect-square+filterui:face-face+filterui:license-L2_L3_L5_L6&FORM=IRFLTR
+`
+
+Perhaps [this](https://www.gorkahernandez.com/blog/image-search-abstraction-layer-node-js/) might be useful for Bing.
