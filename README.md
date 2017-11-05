@@ -1,8 +1,10 @@
 # Hearing the Self: a Spectral Experience
 
-We propose an interactive, audiovisual installation piece offering a glimpse into the human spectrum. Motivated by the concept of spectrum derived from Mathematics and Physics, we attempt to recreate the process by which the human brain *perceives* the world. The audience's face will be an interface through the use of computer vision. The code is available [here](https://github.com/fdch/specexp)
+This interactive, audio/visual installation simulates the process by which the human brain perceives the world. From a mechanical point of view, it has been suggested that the human brain is a machine that performs an inverse Fourier Transform through which it constructs a geometric image from correlations of reflections of light. While a significant component of the installation is visual, the audio acts via sonification to extend the perception beyond just what the eye can see. The audience is invited to experience spectral properties outside of the more familiar visible wavelengths. This piece simultaneously addresses that the mechanical component of perception, even when perceiving one's own self, is only a part of a complex process shaped by many external stimuli, one of the strongest being societal. The code is available [here](https://github.com/fdch/specexp)
 
-![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-269.jpeg)
+[](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
+![![Watch on Vimeo](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-000.jpeg)](https://vimeo.com/241401699)
 
 In trying to answer the most fundamental questions of our existence, we unveil a daunting level of complexity in our universe. One such question is, *Where are we?*. This question's complexity grows quickly as we change contexts. It is easy to answer locally and even globally; we have well-established coordinates and descriptions for our place on Earth. But when we extend this question to the universe, we no longer have a canonical and precise answer. 
 
@@ -18,21 +20,13 @@ The **spectral experience** offers a glimpse into a different and larger reality
 
 ## Synopsis
 
-An audience of one enters a dark room and performs an audiovisual installation from 2-6 minutes using only her face.
+In the first iteration of the experience, an audience of one enters a dark room and performs an audiovisual installation from 2-6 minutes using only her face. In this second iteration, the concept is expanded. The dark room is now a black box in the center of the room. Inside the black box there are three screens, each of which has its own camera that performs the face tracking. The data from the tracker is sent to a main computer which generates the audio filtering that is routed to the room, and the visual representations into the source screen. Up to three participants at a time can change the scenes with their faces or with a usb pedal/switch. The sound is the result of convolution of the cropped image (which often is being shown as its Fast Fourier Transform). Since the face tracking affects the cropping of the sensor (to match the face of the participant), the audio is reactive to the movements of the participant. Therefore, the three participants can interact with each other using the instrument to perform.
 
 ![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-253.jpeg)
 
-## Description
-There is a soft, low frequency sound that invites the audience into the performing space. She finds a spotlight in the center, where she is expected to be during the performance. The light shines on her face as the performance begins. In front of her are two screens onto which the projection is mapped from behind. Two screens are needed to create an atmosphere of immersion. The sound comes from four speakers distributed in quadraphonic setup, englobing the audience. 
+The spectators outside the black box can walk around and see the actual feed coming from the inside of the box. The auditory scene is enhanced with an extra ring of 4 speakers in a wider setup outside the black box, therefore producing an 8 channel spatial scene with some elevation, allowing for subtleties in the sonic landscape that were missing in the first iteration of the experience.
 
-## Camera Feed
-The core of this installation  depends on the video capturing of the performer's face. Using [facetracking software](https://github.com/kylemcdonald/FaceTracker) we obtain a 132 point mesh corresponding to the face captured by the camera feed. We then compute a Fast Fourier Transform on this data to obtain the spectral information we use to generate the sounds and the projections.
-
-## Projection
-The projected video displays lines and filled rectangles with different alpha values which represent spectral information of the incoming feed from the camera, such as: real and imaginary values as well as the magnitude of these values. After some operations on the spectrum, the IFFT is also displayed in a transformed way.
-
-## Sound
-Different oscillators in frequencies around 25-60Hz represent the first modes of the FFT performed on the mesh obtained from the audience's face. These low waves of sound are spatialized according to different phases obtained as well as from the spectrum of the face. This helps englobe the audience in an immersive experience. A higher layer of sound is then introduced, after which the interaction with the audience is more evident. Higher pitched grains of sounds are triggered according to the position of the face; once a position has been registered, the direction of the gaze establishes the axis around which sounds will move.
+The overall exaggeration of this iteration is an attempt to intensify the increasing presence of the screen, the network and the constant surveilance of the self. It is also an attempt to enhance the playfulness of the experience by inviting two other participants to interact with, and by generating an explicit expectation and need to go inside the black box. The idea of the black box is simply to mimic the ubiquity of the computer in every day life, and serves to demythify the concept of the black box by inviting the participant inside. This demythification is also carried out by the use of open-source and recycled materials.
 
 ## The Math
 
@@ -50,7 +44,9 @@ As mentioned above, data is taken of the audience's image and face. In this proj
 
 3. [pix_opencv](https://github.com/avilleret/pix_opencv)
 
-## How to run
+## How to run (iteration 1)
+
+![map](https://raw.githubusercontent.com/fdch/specexp/master/media/map.jpg)
 
 `
 $ cd bin
