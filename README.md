@@ -1,5 +1,7 @@
 # Hearing the Self: a Spectral Experience
 
+Click [here](https://vimeo.com/241401699) or on the image to see the video:
+
 [![Watch on Vimeo](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-000.jpg)](https://vimeo.com/241401699)
 
 This interactive, audio/visual installation simulates the process by which the human brain perceives the world. From a mechanical point of view, it has been suggested that the human brain is a machine that performs an inverse Fourier Transform through which it constructs a geometric image from correlations of reflections of light. While a significant component of the installation is visual, the audio acts via sonification to extend the perception beyond just what the eye can see. The audience is invited to experience spectral properties outside of the more familiar visible wavelengths. This piece simultaneously addresses that the mechanical component of perception, even when perceiving one's own self, is only a part of a complex process shaped by many external stimuli, one of the strongest being societal. The code is available [here](https://github.com/fdch/specexp)
