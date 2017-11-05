@@ -6,7 +6,7 @@ Click [here](https://vimeo.com/241401699) or on the image to see the video:
 
 This interactive, audio/visual installation simulates the process by which the human brain perceives the world. From a mechanical point of view, it has been suggested that the human brain is a machine that performs an inverse Fourier Transform through which it constructs a geometric image from correlations of reflections of light. While a significant component of the installation is visual, the audio acts via sonification to extend the perception beyond just what the eye can see. The audience is invited to experience spectral properties outside of the more familiar visible wavelengths. This piece simultaneously addresses that the mechanical component of perception, even when perceiving one's own self, is only a part of a complex process shaped by many external stimuli, one of the strongest being societal. The code is available [here](https://github.com/fdch/specexp)
 
-![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-180.jpeg)
+![alt text](https://raw.githubusercontent.com/fdch/specexp/master/media/vid-269.jpeg)
 
 In trying to answer the most fundamental questions of our existence, we unveil a daunting level of complexity in our universe. One such question is, *Where are we?*. This question's complexity grows quickly as we change contexts. It is easy to answer locally and even globally; we have well-established coordinates and descriptions for our place on Earth. But when we extend this question to the universe, we no longer have a canonical and precise answer. 
 
