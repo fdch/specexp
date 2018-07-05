@@ -1,0 +1,119 @@
+\begin{thebibliography}{10}
+
+\bibitem{askenfelt:threshold}
+A.~Askenfelt and E.~V.~Jansson.
+\newblock From touch to string vibrations. i: Timing in the grand piano action.
+\newblock 88:52--63, 07 1990.
+
+\bibitem{bental:sonification}
+O.~Ben-Tal and J.~Berger.
+\newblock Creative aspects of sonification.
+\newblock {\em Leonardo}, 37(3):229--232, 2005.
+
+\bibitem{connes:shapes}
+A.~Connes.
+\newblock The music of shapes.
+\newblock September 2012.
+
+\bibitem{danks:gem}
+M.~Danks.
+\newblock Real-time image and video processing in gem.
+\newblock {\em ICMC Proceedings}, 1997.
+
+\bibitem{camara:fdlib}
+F.~C. Halac.
+\newblock fdlib.
+\newblock 2016.
+
+\bibitem{camara:pixfft2}
+F.~C. Halac.
+\newblock pix\_fft2.
+\newblock 2017.
+
+\bibitem{sarahig:facetracker}
+S.~L. J.~M.~Saragih and J.~F. Cohn.
+\newblock Face alignment through subspace constrained mean-shifts.
+\newblock {\em International Conference of Computer Vision (ICCV)}, September
+  2009.
+
+\bibitem{kramer:principles}
+G.~Kramer.
+\newblock Some organizing principles for representing data with sound.
+\newblock {\em SFI Studies in the Sciences of Complexity, Proceedings},
+  XVIII:197--202, 1994.
+
+\bibitem{matsumoto:twister}
+M.~Matsumoto and T.~Nishimura.
+\newblock Mersenne twister: A 623-dimensionally equidistributed uniform
+  pseudo-random number generator.
+\newblock {\em ACM Trans. Model. Comput. Simul.}, 8(1):3--30, Jan. 1998.
+
+\bibitem{meijer:auditory}
+P.~B.~L. Meijer.
+\newblock An experimental system for auditory image representations.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 39(2):112--121,
+  February 1992.
+
+\bibitem{morton:humankind}
+T.~Morton.
+\newblock {\em Humankind: Solidarity with Non-Human People}.
+\newblock Verso, London, 2017.
+
+\bibitem{bental:sonart}
+B.~C. M. D. G.~S. Oded Ben-Tal, Jonathan~Berger and P.~Cook.
+\newblock Sonart : The sonification application research toolbox.
+\newblock {\em Proceedings of the 2002 International Conference on Auditory
+  Display}, July 2002.
+
+\bibitem{bental:sonification2}
+M.~D. ODED BEN-TAL and J.~BERGER.
+\newblock De natura sonoris: Sonification of complex data.
+\newblock {\em CCRMA}, 2004.
+
+\bibitem{oliver:drum}
+J.~Oliver and M.~Jenkins.
+\newblock The silent drum controller: A new percussive gestural interface.
+\newblock {\em ICMC Proceedings}, 2008.
+
+\bibitem{polli:sonification}
+A.~Polli.
+\newblock Atmospherics/weather works: A spatialized meteorological data
+  sonification project.
+\newblock {\em Leonardo}, 38(1):31--36, 2005.
+
+\bibitem{puckette:puredata}
+M.~Puckette.
+\newblock Pure data another integrated computer music environment.
+\newblock {\em ICMC Proceedings}, 1996.
+
+\bibitem{discipio:interface}
+A.~D. Scipio.
+\newblock ‘sound is the interface’: from interactive to ecosystemic signal
+  processing.
+\newblock {\em Organized Sound}, 8(3):269--277, 2003.
+
+\bibitem{thiebaut:images}
+J.-B. Thiebaut, J.~Bello, and D.~Schwarz.
+\newblock How musical are images? from sound representation to image
+  sonification: An eco systemic approach.
+\newblock 08 2007.
+
+\bibitem{weinberg:brainwaves}
+G.~Weinberg and T.~Thatcher.
+\newblock Interctive sonification: Aesthetics, functionality and performance.
+\newblock {\em Leonardo Music Journal}, 16:9--12, 2006.
+
+\bibitem{yeo:raster}
+J.~Yeo, Woon Seung;~Berger.
+\newblock Raster scanning: A new approach to image sonification, sound
+  visualization, sound analysis and synthesis.
+\newblock {\em Proc. of the 9th Int. Conference on Digital Audio Effects
+  (DAFx-06)}, September 2006.
+
+\bibitem{yeo:framework}
+W.~S. Yeo and J.~Berger.
+\newblock A framework for designing image sonification methods.
+\newblock {\em Proceedings of ICAD 05-Eleventh Meeting of the International
+  Conference on Auditory Display}, 2005.
+
+\end{thebibliography}
